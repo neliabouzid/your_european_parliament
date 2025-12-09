@@ -69,7 +69,7 @@
         {% for pos in recent_positions %}
         <a
           class="card-link"
-          href="/{ url_for('show_position', reference=pos.reference) }"
+          href="{{ url_for('show_position', reference=pos.reference) }}"
         >
           <div class="card">
             <div class="card-content">
