@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<h2>{{ row.title }}</h2>
+<p><strong>Reference:</strong> {{ row.reference }}</p>
+<p><strong>Stage:</strong> {{ row.stage }}</p>
+<p><strong>Subjects:</strong> {{ row.subjects }}</p>
+
+<h3>Summary</h3>
+<div>{{ row.proposal_summary | safe }}</div>
+
+<h3>Key Players</h3>
+<div>{{ row.key_players | safe }}</div>
+
+<h3>Key Events</h3>
+<div>{{ row.key_events | safe }}</div>
+{% endblock %}

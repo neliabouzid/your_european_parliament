@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Your European Parliament</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="static/css/homepage.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+      <!-- Logo link to return to the main page -->
+      <a href="#" id="logo-link">
+        <img
+          alt="YEP logo"
+          class="nav-logo"
+          src="static/images/logo.svg"
+        />
+      </a>
+      <!-- Navigation links -->
+      <div class="nav-links">
+        <a class="nav-link" data-page="eu" href="#">What's the EU?</a>
+        <a class="nav-link" data-page="procedure" href="#"
+          >What is a procedure?</a
+        >
+        <!-- Dropdown menu for procedures -->
+        <div class="subnav">
+          <a class="subnavbtn" href="javascript:void(0)">Procedures</a>
+          <div class="subnav-content">
+            <a
+              class="nav-link"
+              data-page="completed"
+              href="positions.html"
+              >Completed procedures</a
+            >
+            <a class="nav-link" data-page="ongoing">Ongoing procedures</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Introduction section with background image -->
+    <div class="background-container">
+      <div class="main-header">
+        <div class="header-content">
+          <h2>what's going on in</h2>
+          <h1>
+            <span class="colored-letter">y</span>our
+            <span class="colored-letter">e</span>uropean
+            <span class="colored-letter">p</span>arliament ?
+          </h1>
+        </div>
+      </div>
+      <div class="photo-credit">
+        © European Union 2019 - Source : EP, Mathieu CUGNOT
+      </div>
+    </div>
+    <!-- Section with dotted background and cards -->
+    <div class="dots-background">
+      <div class="intro-content">
+        Check what legislative procedures the MEPs work on:
+      </div>
+      <!-- Cards wrapper for legislative procedures -->
+      <div class="cards-wrapper" id="cards-wrapper">
+        
+        <a
+          class="card-link"
+          href="/{ url_for('show_position', reference=pos.reference) }"
+        >
+          <div class="card">
+            <div class="card-content">
+              <div class="blue-corner-small"><p>COMPLETED</p></div>
+              <div class="date">10 Sep. 2025</div>
+              <p>Role of gas storage for securing gas supplies ahead of the winter season</p>
+            </div>
+          </div>
+        </a>
+        
+        <a
+          class="card-link"
+          href="/{ url_for('show_position', reference=pos.reference) }"
+        >
+          <div class="card">
+            <div class="card-content">
+              <div class="blue-corner-small"><p>COMPLETED</p></div>
+              <div class="date">05 Aug. 2025</div>
+              <p>Common rules for imports: suspension of certain parts of Regulation (EU) 2015/478 as regards imports of Ukrainian products into the European Union</p>
+            </div>
+          </div>
+        </a>
+        
+        <a
+          class="card-link"
+          href="/{ url_for('show_position', reference=pos.reference) }"
+        >
+          <div class="card">
+            <div class="card-content">
+              <div class="blue-corner-small"><p>COMPLETED</p></div>
+              <div class="date">30 Jul. 2025</div>
+              <p>Amending Regulation as regards obligations of economic operators concerning battery due diligence policies</p>
+            </div>
+          </div>
+        </a>
+        
+        <a
+          class="card-link"
+          href="/{ url_for('show_position', reference=pos.reference) }"
+        >
+          <div class="card">
+            <div class="card-content">
+              <div class="blue-corner-small"><p>COMPLETED</p></div>
+              <div class="date">27 Jun. 2025</div>
+              <p>Additional assistance and further flexibility to outermost regions affected by severe natural disasters: cyclone Chido devastating Mayotte</p>
+            </div>
+          </div>
+        </a>
+        
+      </div>
+
+      <!-- Button to view all procedures -->
+      <a class="box" data-page="all_procedures" href="#">View all procedures</a>
+    </div>
+    <!-- Explanation section -->
+    <div class="blue-colored-content">
+      <div class="main-explanation">
+        <div class="centered-section">
+          <h1>Understand the European Parliament</h1>
+          <p>
+            <strong>YEP</strong> provides significant and vulgarized information
+            for each <strong>legislative procedure</strong> discussed in the
+            European Parliament. <br /><br />
+            By clicking on a procedure, you will find
+            <strong>summaries</strong> of its legislative texts,
+            <strong>MEP votes</strong>, as well as key events and dates.
+          </p>
+        </div>
+      </div>
+      <div class="boxes-container">
+        <a class="box" data-page="about" href="#">About</a>
+        <a class="box" data-page="contact" href="#">Contact</a>
+      </div>
+    </div>
+    <!-- Future page placeholder -->
+    <div class="future-page hidden" id="futurePage">
+      <div class="future-content">
+        <p>Future page in the making...</p>
+        <button class="back-button" id="backButton">Back</button>
+      </div>
+    </div>
+    <!-- Contact popup -->
+    <div class="popup hidden" id="contact-popup">
+      <div class="popup-content">
+        <span class="close-btn" id="close-popup">×</span>
+        <p>Send me an email at:</p>
+        <a href="mailto:bouzidnelia@gmail.com">bouzidnelia@gmail.com</a>
+      </div>
+    </div>
+    <!-- JavaScript file -->
+    <script src="static/js/homepage.js"></script>
+  </body>
+</html>

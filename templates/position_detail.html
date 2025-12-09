@@ -1,0 +1,119 @@
+{% extends "base.html" %} {% block content %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/procedures.css') }}"
+/>
+
+<div class="container">
+  <div class="title">{{ position.title }}</div>
+  <div class="subjects">
+    <strong>Subjects:</strong>
+    {% for s in position.subjects %} {{ s }} {% endfor %}
+  </div>
+  <div class="stage"><strong>Stage reached:</strong> {{ position.stage }}</div>
+  <div class="reference">
+    <strong>Reference:</strong> {{ position.reference }}
+  </div>
+
+  <div class="main">
+    <div class="left-content-area">
+      <div class="content">
+        <div class="explanation-title">Position Summary</div>
+        <div class="proposal-text">{{ position.final_act_summary }}</div>
+      </div>
+
+      <div class="box wide-dates">
+        <h3>Key Events</h3>
+
+        {% if key_events_data %}
+        <table class="key-events-table">
+          <thead>
+            <tr>
+              <th class="event-col">Event</th>
+              <th class="date-col">Date</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for event_name, event_details in key_events_data.items() %}
+            <tr>
+              <th class="event-name">
+                {{ event_name }} {% set first_reference =
+                event_details.Reference | first if event_details.Reference else
+                none %} {% if first_reference and first_reference.href and
+                (first_reference.text or first_reference.href) %}
+                <div class="hover-link">
+                  <a
+                    href="{{ first_reference.href }}"
+                    target="_blank"
+                    class="event-reference-link"
+                  >
+                    {{ first_reference.text or "View Reference" }}
+                  </a>
+                </div>
+                {% endif %}
+              </th>
+
+              <td class="event-date">{{ event_details.Date or "N/A" }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        {% else %}
+        <p>No structured key events available.</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="box key-players">
+        <h2>Key Players</h2>
+
+        {% for institution, data in key_players_data.items() %}
+        <div class="key-player-section mb-4">
+          <h3>{{ institution }}</h3>
+
+          {% if data is mapping and data %}
+          <table class="key-players-table table table-bordered table-sm my-2">
+            <tbody>
+              {% for key, value in data.items() %}
+              <tr>
+                <th scope="row" style="width: 30%">{{ key }}</th>
+                <td>{{ value or "Not specified" }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+          {% elif data is iterable and data is not string and data %} {% for
+          item in data %} {% if item is mapping %}
+          <table
+            class="key-players-table table table-bordered table-sm my-2 mb-3"
+          >
+            <tbody>
+              {% for key, value in item.items() %}
+              <tr>
+                <th scope="row" style="width: 30%">{{ key }}</th>
+                <td>{{ value or "Not specified" }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <p>{{ item }}</p>
+          {% endif %} {% endfor %} {% elif data %}
+          <p>{{ data }}</p>
+
+          {% else %}
+          <p>No players specified for this institution.</p>
+
+          {% endif %}
+        </div>
+        <hr />
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

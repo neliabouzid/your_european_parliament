@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/procedures.css') }}"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="{{ url_for('index') }}" id="logo-link">
+        <img
+          src="{{ url_for('static', filename='images/logo.svg') }}"
+          alt="YEP logo"
+          class="nav-logo"
+        />
+      </a>
+
+      <div class="nav-links">
+        <a href="#" class="nav-link" data-page="eu">What's the EU?</a>
+        <a href="#" class="nav-link" data-page="procedure"
+          >What is a procedure?</a
+        >
+
+        <div class="subnav">
+          <a href="javascript:void(0)" class="subnavbtn">Procedures</a>
+          <div class="subnav-content">
+            <a href="{{ url_for('index_positions') }}" class="nav-link"
+              >Completed procedures</a
+            >
+
+            <!-- ⚠️ Cette route n'existe PAS : COMMENTÉE -->
+            {#
+            <a href="{{ url_for('index_proposals') }}" class="nav-link"
+              >Ongoing procedures</a
+            >
+            #}
+
+            <!-- Remplacement provisoire -->
+            <a href="#" class="nav-link">Ongoing procedures</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="{{ url_for('index_positions') }}"></a>
+    </nav>
+
+    <main>{% block content %}{% endblock %}</main>
+  </body>
+</html>
