@@ -5,28 +5,35 @@
   href="{{ url_for('static', filename='css/homepage.css') }}"
 />
 
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='css/procedures.css') }}"
-/>
+<div
+  class="container-centered"
+  style="
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0px;
+    padding-bottom: 40px;
+  "
+>
+  <div class="title" style="margin-bottom: 30px">Completed procedures</div>
 
-<div class="title">Completed procedures</div>
-<div class="cards-wrapper">
-  {% for row in rows %}
-  <a
-    href="{{ url_for('show_position', reference=row.reference) }}"
-    class="card-link"
-    data-page="{{ row.reference }}"
-  >
-    <div class="card">
-      <div class="card-content">
-        <div class="blue-corner-small"><p>COMPLETED</p></div>
-        <div class="date">{{ row.date }}</div>
-        <p>{{ row.title }}</p>
+  <div class="cards-wrapper">
+    {% for row in rows %}
+    <a
+      href="{{ url_for('show_position', reference=row.reference) }}"
+      class="card-link"
+      data-page="{{ row.reference }}"
+    >
+      <div class="card">
+        <div class="card-content">
+          <div class="blue-corner-small"><p>COMPLETED</p></div>
+          <div class="date">{{ row.date }}</div>
+          <p>{{ row.title }}</p>
+        </div>
       </div>
-    </div>
-  </a>
-  {% endfor %}
+    </a>
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}

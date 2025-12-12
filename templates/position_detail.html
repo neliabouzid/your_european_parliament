@@ -5,13 +5,19 @@
   href="{{ url_for('static', filename='css/procedures.css') }}"
 />
 
-<div class="container">
+<div
+  class="container-centered"
+  style="margin-top: 40px; margin-bottom: 40px; flex: 1"
+>
   <div class="title">{{ position.title }}</div>
+
   <div class="subjects">
     <strong>Subjects:</strong>
     {% for s in position.subjects %} {{ s }} {% endfor %}
   </div>
+
   <div class="stage"><strong>Stage reached:</strong> {{ position.stage }}</div>
+
   <div class="reference">
     <strong>Reference:</strong> {{ position.reference }}
   </div>
@@ -66,6 +72,7 @@
         {% endif %}
       </div>
     </div>
+
     <div class="sidebar">
       <div class="box key-players">
         <h2>Key Players</h2>

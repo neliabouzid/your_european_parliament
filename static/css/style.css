@@ -43,18 +43,6 @@ a:hover {
   margin-top: 5px;
 }
 
-main {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 .positions-table {
   width: 100%;
   border-collapse: collapse;

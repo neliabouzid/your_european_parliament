@@ -43,7 +43,7 @@
 }
 
 body {
-  min-height: 150vh;
+  min-height: 150px;
   background: rgb(243, 245, 246);
   color: rgba(8, 26, 64, 0.856);
   font-family: "SF Pro", sans-serif;
@@ -51,28 +51,50 @@ body {
   letter-spacing: 1px;
 }
 
+/* 1. On libère le bloc MAIN */
+/* Supprime le max-width ici, car c'est le .container-centered à l'intérieur qui va gérer la largeur */
+main {
+  width: 100%;
+  padding: 0; /* On enlève le padding par défaut, le container s'en chargera */
+  margin: 0;
+  display: flex; /* Pour le sticky footer */
+  flex-direction: column; /* Pour le sticky footer */
+  min-height: calc(100vh - 60px); /* Hauteur écran moins la hauteur navbar */
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Navigation bar */
+/* 2. On configure la NAVBAR pour qu'elle accepte le centrage */
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* Le fond et la position */
   background-color: rgb(243, 245, 246);
   color: rgb(49, 121, 189);
   font-family: "SF Pro Rounded Bold", sans-serif;
-  padding: 10px 20px;
   height: 60px;
   width: 100%;
   position: fixed;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  /* IMPORTANT : On change le display ici */
+  display: flex;
+  justify-content: center; /* On centre le conteneur intérieur */
+  padding: 0; /* Plus de padding ici, c'est le container qui gère */
+}
+
+/* 3. Assure-toi que .container-centered est bien défini ainsi */
+.container-centered {
+  width: 100%;
+  max-width: 1200px; /* C'est ça qui empêche l'élargissement au dézoom */
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .nav-logo {

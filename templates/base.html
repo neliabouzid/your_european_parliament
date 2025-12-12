@@ -10,45 +10,46 @@
   </head>
   <body>
     <div class="navbar">
-      <a href="{{ url_for('index') }}" id="logo-link">
-        <img
-          src="{{ url_for('static', filename='images/logo.svg') }}"
-          alt="YEP logo"
-          class="nav-logo"
-        />
-      </a>
-
-      <div class="nav-links">
-        <a href="#" class="nav-link" data-page="eu">What's the EU?</a>
-        <a href="#" class="nav-link" data-page="procedure"
-          >What is a procedure?</a
+      <div
+        class="container-centered"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 100%;
+        "
+      >
+        <a
+          href="{{ url_for('index') }}"
+          id="logo-link"
+          style="display: flex; align-items: center"
         >
+          <img
+            src="{{ url_for('static', filename='images/logo.svg') }}"
+            alt="YEP logo"
+            class="nav-logo"
+          />
+        </a>
 
-        <div class="subnav">
-          <a href="javascript:void(0)" class="subnavbtn">Procedures</a>
-          <div class="subnav-content">
-            <a href="{{ url_for('index_positions') }}" class="nav-link"
-              >Completed procedures</a
-            >
+        <div class="nav-links">
+          <a href="#" class="nav-link" data-page="eu">What's the EU?</a>
+          <a href="#" class="nav-link" data-page="procedure"
+            >What is a procedure?</a
+          >
 
-            <!-- ⚠️ Cette route n'existe PAS : COMMENTÉE -->
-            {#
-            <a href="{{ url_for('index_proposals') }}" class="nav-link"
-              >Ongoing procedures</a
-            >
-            #}
-
-            <!-- Remplacement provisoire -->
-            <a href="#" class="nav-link">Ongoing procedures</a>
+          <div class="subnav">
+            <a href="javascript:void(0)" class="subnavbtn">Procedures</a>
+            <div class="subnav-content">
+              <a href="{{ url_for('index_positions') }}" class="nav-link"
+                >Completed procedures</a
+              >
+              <a href="#" class="nav-link">Ongoing procedures</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <nav>
-      <a href="{{ url_for('index_positions') }}"></a>
-    </nav>
-
-    <main>{% block content %}{% endblock %}</main>
+    <main style="padding-top: 60px">{% block content %}{% endblock %}</main>
   </body>
 </html>
