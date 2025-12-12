@@ -544,22 +544,17 @@ a {
   display: none !important;
 }
 
-/* Responsive layout for different types of screens */
+/* Responsive layout adjustments */
 
-@media (min-width: 1201px) {
-  .cards-wrapper {
-    max-width: 1240px;
-  }
-}
+/* 1. On supprime le bloc (min-width: 1201px) car .container-centered gère déjà ça */
 
-@media (max-width: 1200px) and (min-width: 769px) {
-  .cards-wrapper {
-    max-width: 620px;
-  }
+/* Tablette et petits ordis */
+@media (max-width: 1200px) {
+  /* On enlève la restriction sur .cards-wrapper, on laisse le flexbox faire son travail */
 
   .header-content h1 {
     font-size: 45px;
-    white-space: nowrap;
+    white-space: normal; /* Important: permet au titre de passer à la ligne si besoin */
   }
 
   .header-content h2 {
@@ -571,58 +566,39 @@ a {
   }
 }
 
+/* Mobile format paysage / Tablette portrait */
 @media (max-width: 768px) {
-  .cards-wrapper {
-    max-width: 280px;
-    gap: 20px;
-  }
+  /* Ici aussi, on supprime les restrictions de largeur sur le wrapper */
 
   .header-content h1 {
-    font-size: 30px;
-    white-space: nowrap;
+    font-size: 32px; /* Un peu plus petit pour mobile */
   }
 
   .header-content h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .intro-content {
     font-size: 16px;
   }
 
+  /* Ajustement de la navbar pour qu'elle ne craque pas */
   .nav-links a,
   .subnavbtn {
     font-size: 14px;
+    padding: 10px 8px; /* On réduit un peu les marges entre les liens */
+  }
+
+  /* Optionnel : Si tes liens débordent, tu peux réduire le logo */
+  .nav-logo {
+    height: 30px;
   }
 }
 
+/* Mobile format portrait (La plupart des téléphones) */
 @media (max-width: 480px) {
-  .cards-wrapper {
-    max-width: 280px;
-    gap: 15px;
-  }
-
   .header-content h1 {
     font-size: 28px;
-  }
-
-  .header-content h2 {
-    font-size: 20px;
-  }
-
-  .intro-content {
-    font-size: 14px;
-  }
-
-  .nav-links a,
-  .subnavbtn {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 360px) {
-  .header-content h1 {
-    font-size: 24px;
   }
 
   .header-content h2 {
@@ -630,6 +606,20 @@ a {
   }
 
   .intro-content {
-    font-size: 13px;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  /* Sur tout petit écran, on réduit encore les liens */
+  .nav-links a,
+  .subnavbtn {
+    font-size: 11px;
+    padding: 10px 5px;
+  }
+
+  /* Important : sur mobile, les cartes doivent se centrer une par une */
+  .cards-wrapper {
+    justify-content: center;
+    gap: 20px;
   }
 }
