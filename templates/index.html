@@ -8,6 +8,11 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/homepage.css', v='2' )}}"
     />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
+    />
   </head>
   <body>
     <div class="navbar">
@@ -20,7 +25,7 @@
           height: 100%;
         "
       >
-        <a href="#" id="logo-link">
+        <a href="{{ url_for('index') }}" id="logo-link">
           <img
             alt="YEP logo"
             class="nav-logo"
@@ -29,23 +34,22 @@
         </a>
 
         <div class="nav-links">
-          <a class="nav-link" data-page="eu" href="#">What's the EU?</a>
-          <a class="nav-link" data-page="procedure" href="#"
+          <a
+            class="nav-link"
+            data-page="eu"
+            href="{{ url_for('in_the_making') }}"
+            >What's the EU?</a
+          >
+          <a
+            class="nav-link"
+            data-page="procedure"
+            href="{{ url_for('in_the_making') }}"
             >What is a procedure?</a
           >
 
-          <div class="subnav">
-            <a class="subnavbtn" href="javascript:void(0)">Procedures</a>
-            <div class="subnav-content">
-              <a
-                class="nav-link"
-                data-page="completed"
-                href="{{ url_for('index_positions') }}"
-                >Completed procedures</a
-              >
-              <a class="nav-link" data-page="ongoing">Ongoing procedures</a>
-            </div>
-          </div>
+          <a class="nav-link" href="{{ url_for('index_procedures') }}"
+            >Procedures</a
+          >
         </div>
       </div>
     </div>
@@ -82,11 +86,16 @@
           {% for pos in recent_positions %}
           <a
             class="card-link"
-            href="{{ url_for('show_position', reference=pos.reference) }}"
+            href="{{ url_for('show_procedure', reference=pos.reference) }}"
           >
             <div class="card">
               <div class="card-content">
-                <div class="blue-corner-small"><p>{{ pos.stage }}</p></div>
+                <div
+                  class="status-badge {% if pos.stage == 'COMPLETED' %}status-completed{% else %}status-ongoing{% endif %}"
+                >
+                  <p>{{ pos.stage }}</p>
+                </div>
+
                 <div class="date">{{ pos.formatted_date }}</div>
                 <p>{{ pos.title }}</p>
               </div>
@@ -95,13 +104,16 @@
           {% endfor %}
         </div>
 
-        <a class="box" data-page="all_procedures" href="#"
+        <a
+          class="box"
+          data-page="all_procedures"
+          href="{{ url_for('index_procedures') }}"
           >View all procedures</a
         >
       </div>
     </div>
 
-    <div class="blue-colored-content">
+    <div class="colored-content">
       <div class="container-centered">
         <div class="main-explanation">
           <div class="centered-section">
@@ -119,24 +131,16 @@
         </div>
 
         <div class="boxes-container">
-          <a class="box" data-page="about" href="#">About</a>
-          <a class="box" data-page="contact" href="#">Contact</a>
+          <a class="box" data-page="about" href="{{ url_for('in_the_making') }}"
+            >About</a
+          >
+          <a
+            class="box"
+            data-page="contact"
+            href="{{ url_for('in_the_making') }}"
+            >Contact</a
+          >
         </div>
-      </div>
-    </div>
-
-    <div class="future-page hidden" id="futurePage">
-      <div class="future-content">
-        <p>Future page in the making...</p>
-        <button class="back-button" id="backButton">Back</button>
-      </div>
-    </div>
-
-    <div class="popup hidden" id="contact-popup">
-      <div class="popup-content">
-        <span class="close-btn" id="close-popup">×</span>
-        <p>Send me an email at:</p>
-        <a href="mailto:bouzidnelia@gmail.com">bouzidnelia@gmail.com</a>
       </div>
     </div>
 

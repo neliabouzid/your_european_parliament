@@ -8,6 +8,11 @@
       rel="stylesheet"
       href="static/css/homepage.css?v=2"
     />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="static/images/logo.svg"
+    />
   </head>
   <body>
     <div class="navbar">
@@ -20,7 +25,7 @@
           height: 100%;
         "
       >
-        <a href="#" id="logo-link">
+        <a href="index.html" id="logo-link">
           <img
             alt="YEP logo"
             class="nav-logo"
@@ -29,23 +34,22 @@
         </a>
 
         <div class="nav-links">
-          <a class="nav-link" data-page="eu" href="#">What's the EU?</a>
-          <a class="nav-link" data-page="procedure" href="#"
+          <a
+            class="nav-link"
+            data-page="eu"
+            href="in-the-making.html"
+            >What's the EU?</a
+          >
+          <a
+            class="nav-link"
+            data-page="procedure"
+            href="in-the-making.html"
             >What is a procedure?</a
           >
 
-          <div class="subnav">
-            <a class="subnavbtn" href="javascript:void(0)">Procedures</a>
-            <div class="subnav-content">
-              <a
-                class="nav-link"
-                data-page="completed"
-                href="positions.html"
-                >Completed procedures</a
-              >
-              <a class="nav-link" data-page="ongoing">Ongoing procedures</a>
-            </div>
-          </div>
+          <a class="nav-link" href="procedures.html"
+            >Procedures</a
+          >
         </div>
       </div>
     </div>
@@ -82,65 +86,88 @@
           
           <a
             class="card-link"
-            href="positions/2025/0051(COD).html"
+            href="procedure/2025/0103(COD).html"
           >
             <div class="card">
               <div class="card-content">
-                <div class="blue-corner-small"><p>COMPLETED</p></div>
-                <div class="date">10 Sep. 2025</div>
-                <p>Role of gas storage for securing gas supplies ahead of the winter season</p>
+                <div
+                  class="status-badge status-ongoing"
+                >
+                  <p>ONGOING</p>
+                </div>
+
+                <div class="date">19 Dec. 2025</div>
+                <p>Incentivising defence-related investments in the EU budget to implement the ReArm Europe Plan</p>
               </div>
             </div>
           </a>
           
           <a
             class="card-link"
-            href="positions/2025/0056(COD).html"
+            href="procedure/2025/0073(COD).html"
           >
             <div class="card">
               <div class="card-content">
-                <div class="blue-corner-small"><p>COMPLETED</p></div>
-                <div class="date">05 Aug. 2025</div>
-                <p>Common rules for imports: suspension of certain parts of Regulation (EU) 2015/478 as regards imports of Ukrainian products into the European Union</p>
+                <div
+                  class="status-badge status-ongoing"
+                >
+                  <p>ONGOING</p>
+                </div>
+
+                <div class="date">17 Dec. 2025</div>
+                <p>European Globalisation Adjustment Fund for Displaced Workers (EGF): support to workers affected by imminent job displacement in enterprises undergoing restructuring</p>
               </div>
             </div>
           </a>
           
           <a
             class="card-link"
-            href="positions/2025/0129(COD).html"
+            href="procedure/2025/0405(COD).html"
           >
             <div class="card">
               <div class="card-content">
-                <div class="blue-corner-small"><p>COMPLETED</p></div>
-                <div class="date">30 Jul. 2025</div>
-                <p>Amending Regulation as regards obligations of economic operators concerning battery due diligence policies</p>
+                <div
+                  class="status-badge status-ongoing"
+                >
+                  <p>ONGOING</p>
+                </div>
+
+                <div class="date">16 Dec. 2025</div>
+                <p>Placing on the market of genetically modified micro-organisms and the processing of organs</p>
               </div>
             </div>
           </a>
           
           <a
             class="card-link"
-            href="positions/2025/0104(COD).html"
+            href="procedure/2025/0423(COD).html"
           >
             <div class="card">
               <div class="card-content">
-                <div class="blue-corner-small"><p>COMPLETED</p></div>
-                <div class="date">27 Jun. 2025</div>
-                <p>Additional assistance and further flexibility to outermost regions affected by severe natural disasters: cyclone Chido devastating Mayotte</p>
+                <div
+                  class="status-badge status-ongoing"
+                >
+                  <p>ONGOING</p>
+                </div>
+
+                <div class="date">16 Dec. 2025</div>
+                <p>Calculation of emission credits for heavy-duty vehicles for the reporting periods of the years 2025 to 2029</p>
               </div>
             </div>
           </a>
           
         </div>
 
-        <a class="box" data-page="all_procedures" href="#"
+        <a
+          class="box"
+          data-page="all_procedures"
+          href="procedures.html"
           >View all procedures</a
         >
       </div>
     </div>
 
-    <div class="blue-colored-content">
+    <div class="colored-content">
       <div class="container-centered">
         <div class="main-explanation">
           <div class="centered-section">
@@ -158,24 +185,16 @@
         </div>
 
         <div class="boxes-container">
-          <a class="box" data-page="about" href="#">About</a>
-          <a class="box" data-page="contact" href="#">Contact</a>
+          <a class="box" data-page="about" href="in-the-making.html"
+            >About</a
+          >
+          <a
+            class="box"
+            data-page="contact"
+            href="in-the-making.html"
+            >Contact</a
+          >
         </div>
-      </div>
-    </div>
-
-    <div class="future-page hidden" id="futurePage">
-      <div class="future-content">
-        <p>Future page in the making...</p>
-        <button class="back-button" id="backButton">Back</button>
-      </div>
-    </div>
-
-    <div class="popup hidden" id="contact-popup">
-      <div class="popup-content">
-        <span class="close-btn" id="close-popup">×</span>
-        <p>Send me an email at:</p>
-        <a href="mailto:bouzidnelia@gmail.com">bouzidnelia@gmail.com</a>
       </div>
     </div>
 

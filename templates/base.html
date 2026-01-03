@@ -2,11 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>{{ title }}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Your European Parliament</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/procedures.css', v='2') }}"
+      href="{{ url_for('static', filename='css/homepage.css', v='2' )}}"
     />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
     />
   </head>
   <body>
@@ -20,37 +25,34 @@
           height: 100%;
         "
       >
-        <a
-          href="{{ url_for('index') }}"
-          id="logo-link"
-          style="display: flex; align-items: center"
-        >
+        <a href="{{ url_for('index') }}" id="logo-link">
           <img
-            src="{{ url_for('static', filename='images/logo.svg') }}"
             alt="YEP logo"
             class="nav-logo"
+            src="{{ url_for('static', filename='images/logo.svg') }}"
           />
         </a>
 
         <div class="nav-links">
-          <a href="#" class="nav-link" data-page="eu">What's the EU?</a>
-          <a href="#" class="nav-link" data-page="procedure"
+          <a
+            class="nav-link"
+            data-page="eu"
+            href="{{ url_for('in_the_making') }}"
+            >What's the EU?</a
+          >
+          <a
+            class="nav-link"
+            data-page="procedure"
+            href="{{ url_for('in_the_making') }}"
             >What is a procedure?</a
           >
 
-          <div class="subnav">
-            <a href="javascript:void(0)" class="subnavbtn">Procedures</a>
-            <div class="subnav-content">
-              <a href="{{ url_for('index_positions') }}" class="nav-link"
-                >Completed procedures</a
-              >
-              <a href="#" class="nav-link">Ongoing procedures</a>
-            </div>
-          </div>
+          <a class="nav-link" href="{{ url_for('index_procedures') }}"
+            >Procedures</a
+          >
         </div>
       </div>
     </div>
-
-    <main style="padding-top: 60px">{% block content %}{% endblock %}</main>
+    <main>{% block content %}{% endblock %}</main>
   </body>
 </html>

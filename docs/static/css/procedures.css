@@ -46,20 +46,42 @@ body {
   min-height: 150px;
   background: rgb(243, 245, 246);
   color: rgba(8, 26, 64, 0.856);
-  font-family: "SF Pro", sans-serif;
-  font-size: 18px;
+  font-family: "OpenSans", sans-serif;
+  font-size: 15px;
   letter-spacing: 1px;
 }
 
-/* 1. On libère le bloc MAIN */
-/* Supprime le max-width ici, car c'est le .container-centered à l'intérieur qui va gérer la largeur */
-main {
+.background-container {
+  position: relative;
   width: 100%;
-  padding: 0; /* On enlève le padding par défaut, le container s'en chargera */
-  margin: 0;
-  display: flex; /* Pour le sticky footer */
-  flex-direction: column; /* Pour le sticky footer */
-  min-height: calc(100vh - 60px); /* Hauteur écran moins la hauteur navbar */
+  height: fit-content;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.photo-credit {
+  position: absolute;
+  top: 180px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  font-family: "SF Pro", sans-serif;
+  z-index: 1;
+  padding: 0px 55px;
+}
+
+.background-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background-image: url("../images/EP_vote.jpg");
+  background-size: cover;
+  background-position: 50% 40%;
+  background-blend-mode: screen;
+  opacity: 0.8;
+  z-index: -1;
 }
 
 a {
@@ -67,128 +89,32 @@ a {
   text-decoration: none;
 }
 
-/* 2. On configure la NAVBAR pour qu'elle accepte le centrage */
-.navbar {
-  /* Le fond et la position */
-  background-color: rgb(243, 245, 246);
-  color: rgb(49, 121, 189);
-  font-family: "SF Pro Rounded Bold", sans-serif;
-  height: 60px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
-  /* IMPORTANT : On change le display ici */
+.title-box {
+  background-color: white;
+  max-width: 900px;
+  width: fit-content;
+  margin-top: 70px;
+  border-radius: 6px;
   display: flex;
-  justify-content: center; /* On centre le conteneur intérieur */
-  padding: 0; /* Plus de padding ici, c'est le container qui gère */
-}
-
-/* 3. Assure-toi que .container-centered est bien défini ainsi */
-.container-centered {
-  width: 100%;
-  max-width: 1200px; /* C'est ça qui empêche l'élargissement au dézoom */
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.nav-logo {
-  height: 40px;
-  transition: transform 0.3s ease;
-}
-
-.nav-logo:hover {
-  transform: scale(1.05);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-
-.nav-links a,
-.subnavbtn {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  height: 60px;
-  padding: 10px 15px;
-  font-size: 17px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.navbar a:hover,
-.subnavbtn:hover {
-  color: rgb(242, 205, 55);
-}
-
-/* Dropdown navigation bar */
-.subnav {
-  position: relative;
-  display: inline-block;
-}
-
-.subnav-content {
-  position: absolute;
-  top: 100%;
-  background-color: rgb(243, 245, 246);
-  width: 100%;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  z-index: 1001;
-  transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-  padding: 5px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-}
-
-.subnav-content a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  font-size: 17px;
-  transition: all 0.3s ease;
-  padding: 0 20px;
-  margin: 5px 0;
-  text-align: center;
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-}
-
-.subnav:hover .subnav-content {
-  opacity: 1;
-  visibility: visible;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 10px;
 }
 
 .title {
-  font-family: "OpenSans", sans-serif;
+  margin: 0;
   font-weight: 900;
+  font-size: 30px;
   color: rgb(2, 77, 142);
-  font-size: 35px;
-  margin-top: 150px;
   margin-bottom: 10px;
-  margin-left: 80px;
-  margin-right: 40px;
-  max-width: 800px;
 }
 
 .subjects,
 .stage,
 .reference {
-  margin-left: 80px;
-  font-family: "OpenSans", sans-serif;
   font-size: 14px;
   color: rgba(8, 26, 64, 0.8);
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 
 .subjects strong,
@@ -197,326 +123,149 @@ a {
   color: rgb(2, 77, 142);
 }
 
-.subjects strong {
-  color: rgb(2, 77, 142);
+.left-column {
+  width: 700px;
+  margin-left: 25px;
 }
 
-.main {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 20px 70px;
-  gap: 25px;
-}
-
-.left-content-area {
-  /* New wrapper for Summary and Wide Dates */
-  display: flex;
-  flex-direction: column;
-  flex: 1; /* Takes up available space next to sidebar */
-  gap: 25px;
-}
-
-.content {
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0 2px 1px rgba(164, 163, 163, 0.1);
-  padding: 15px 15px;
-  /* Removed margin-right: 120px to allow it to grow with the flex container */
-}
-
-.explanation-title {
-  font-family: "OpenSans", sans-serif;
+.left-column h1 {
   font-weight: 900;
   color: rgb(2, 77, 142);
-  font-size: 17px;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.left-column p {
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.container-centered {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.centered-container {
+  width: 1250px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.right-column {
+  flex: 1.1;
+  min-width: 350px;
+  padding-right: 90px;
+}
+
+.box-title {
+  color: #004b8d;
+  font-size: 1.2rem;
+  font-weight: 800;
   margin-bottom: 15px;
-}
-
-.proposal-text {
-  font-family: "OpenSans", sans-serif;
-  font-size: 15px;
-}
-
-/* Sidebar right boxes */
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 400px;
-}
-
-.sidebar .box {
-  background-color: white;
-  padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  font-size: 15px;
-}
-
-/* ----- Key Players Table Styling ----- */
-.key-players {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  overflow-x: auto;
-  /* Removed margin-right: 200px as it's inside the fixed-width sidebar now */
-}
-
-.key-players h3 {
-  margin-top: 0;
-  color: #2a4d8f;
-  font-size: 18px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 6px;
-}
-
-.key-players-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  margin-bottom: 16px; /* space between multiple tables */
-  font-size: 14px;
-  /* Removed margin-right: 12px */
-}
-
-.key-players-table th {
-  background-color: #f8f9fb;
-  color: #2a4d8f;
-  text-align: left;
-  padding: 6px 8px;
-  border-bottom: 2px solid #ddd;
-  font-size: 14px;
-}
-
-.key-players-table td {
   border-bottom: 1px solid #eee;
-  padding: 6px 8px;
-  vertical-align: top;
+  padding-bottom: 10px;
 }
 
-.institution-block {
-  margin-bottom: 24px; /* a little more space between institutions */
-}
-
-/* ----- Main Dates Table Styling (old styles, now using key-events-table) ----- */
-.main-dates-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-.main-dates-table th {
-  text-align: left;
-  padding: 6px 8px;
-  background-color: #f8f9fb;
-  color: #2a4d8f;
-  width: 150px;
-}
-
-.main-dates-table td {
-  padding: 6px 8px;
-  border-bottom: 1px solid #eee;
-}
-
-.event-block h3 {
-  margin-top: 0;
-  color: #2a4d8f;
-  font-size: 18px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 6px;
-  margin-bottom: 8px;
-}
-
-/* Styling général des tableaux de détails (General detail table styling) */
-.key-players-table,
-.key-events-table {
-  width: 100%;
-  margin-bottom: 1.5rem; /* Space under the table */
-  border-collapse: collapse;
-}
-
-/* En-têtes et lignes d'événements clés (Key event headers and rows) */
-.key-events-table thead th {
-  background-color: #f0f4f7; /* Background color for headers */
-  color: #333;
-  padding: 0.75rem;
-  border-bottom: 2px solid #ddd;
-  text-align: left;
-  font-size: 0.9rem;
-}
-
-/* Première colonne (les clés dans key_players et les noms d'événements dans key_events) */
-.key-players-table tbody th {
-  background-color: #e9ecef; /* Slightly greyed for keys/titles */
-  font-weight: bold;
-  color: #495057;
-  vertical-align: top;
-}
-
-.key-players-table td,
-.key-events-table td,
-.key-events-table th {
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #dee2e6;
-  vertical-align: top;
-  font-size: 0.9rem;
-}
-
-/* Style des liens dans les cellules de détails (Link style in detail cells) */
-.key-events-table .badge {
-  margin: 0.1rem 0;
-  padding: 0.4em 0.6em;
-  font-weight: 500;
-}
-
-/* Style général pour les blocs institutionnels (General style for institutional blocks) */
-.key-player-section h3 {
-  border-bottom: 2px solid rgb(2, 77, 142); /* Blue underline for the institution, kept the blue theme color */
+.institution-header {
+  color: #004b8d;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: 2px solid #004b8d;
   padding-bottom: 5px;
-  margin-top: 1.5rem;
-  color: rgb(2, 77, 142);
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
-/* Styling général des tableaux d'événements (General event table styling) */
-.key-events-table {
+.custom-table {
   width: 100%;
-  margin-bottom: 1.5rem;
   border-collapse: collapse;
+  margin-bottom: 10px;
+  table-layout: fixed;
 }
 
-/* En-têtes de colonnes (Column headers) */
-.key-events-table thead th {
-  background-color: #f0f4f7;
-  color: #333;
-  padding: 0.75rem;
-  border-bottom: 2px solid #ddd;
-  text-align: left;
-  font-size: 0.9rem;
-}
-
-/* Cellules de données et en-têtes de ligne (nom de l'événement) (Data cells and row headers (event name)) */
-.key-events-table td,
-.key-events-table th {
-  padding: 0.5rem 0.75rem;
+.custom-table th,
+.custom-table td {
   border: 1px solid #dee2e6;
-  vertical-align: top;
-  font-size: 0.9rem;
+  padding: 8px 12px;
+  font-size: 14px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
-/* Nom de l'événement (première colonne) (Event name (first column)) */
-.key-events-table tbody th {
-  font-weight: bold;
-  color: #007bff; /* Highlight event name */
+.custom-table th {
+  background-color: #f8f9fa;
+  text-align: left;
 }
 
-/* Style des badges (liens) (Badge style (links)) */
-.key-events-table .badge {
-  margin: 0.1rem 0;
-  padding: 0.4em 0.6em;
-  font-weight: 500;
-}
-
-/* ----- Bloc des événements clés large sous le résumé (Wide key events block under the summary) ----- */
-
-.wide-dates {
-  /* Removed width: 90% and centering for flex layout */
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-  margin-top: 0; /* Adjusted for better spacing in the new container */
-}
-
-/* Titre (Title) */
-.wide-dates h3 {
-  font-family: "OpenSans", sans-serif;
-  font-weight: 900;
-  color: rgb(2, 77, 142);
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
-/* ----- Table wide ----- */
-
-.key-events-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 16px; /* slightly larger */
-  /* Ensure text is centered in the table body cells */
-  text-align: center;
-}
-
-/* En-têtes (Headers) */
-.key-events-table thead th {
-  background-color: #e9f0f8;
-  padding: 10px;
-  border-bottom: 2px solid #cfd9e5;
-  font-weight: bold;
-  color: #2a4d8f;
-  text-align: center; /* Center header text */
-}
-
-/* Cellules (Cells) */
-.key-events-table td,
-.key-events-table th {
-  padding: 10px 12px;
-  border: 1px solid #e1e5eb;
-  vertical-align: top;
-}
-
-/* Événement (colonne 1) (Event (column 1)) */
-.key-events-table tbody th {
-  color: #0055aa;
-  width: 70%; /* **Increased width for Event column (Example: 70%)** */
-}
-
-/* Date Cell (colonne 2) */
-.key-events-table tbody td:last-child {
-  width: 30%; /* **Reduced width for Date column (Remaining 30%)** */
-}
-
-/* Badges / liens (Badges / links) */
-.key-events-table .badge {
-  padding: 5px 8px;
-  font-size: 0.85em;
-}
-
-/* 1. Cache le lien par défaut (Hides default link) */
-.key-events-table .event-name .hover-link {
-  display: none;
-  position: absolute;
-  z-index: 10;
-  /* Aesthetic styles (adjust to your theme) */
-  background-color: #007bff;
-  padding: 5px 10px;
-  border-radius: 3px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* 2. Positionnement du conteneur parent (Positioning of the parent container) */
-.key-events-table .event-name {
-  position: relative; /* Crucial for child (hover-link) to position relative to it */
-  cursor: pointer;
-}
-
-/* 3. Affiche le lien au survol de la cellule entière (Shows the link on hover of the entire cell) */
-.key-events-table .event-name:hover .hover-link {
-  display: block;
-  /* Positioning for the 'tooltip' */
-  top: 50%;
-  left: 100%;
-  transform: translate(
-    15px,
-    -50%
-  ); /* Shifts slightly to the right of the column */
-}
-
-/* 4. Style du lien (Link style) */
-.key-events-table .event-reference-link {
-  color: white;
+.event-link {
+  font-size: 0.75rem;
+  color: #004b8d;
   text-decoration: none;
+  font-weight: normal;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+}
+
+.wide-table th {
+  background-color: #f1f4f7 !important;
+  color: #024d8e;
+}
+
+.wide-table td {
+  vertical-align: top;
+  padding: 12px;
+}
+
+.event-table-fixed {
+  width: 100%;
+  table-layout: auto;
+}
+
+.col-event {
+  width: auto;
+}
+
+.col-date,
+.date-cell {
+  min-width: 110px;
+  max-width: 110px;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #f8f9fa !important;
+  width: 60px !important;
+}
+
+.main-page-layout {
+  gap: 80px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 0 40px;
+  align-items: flex-start;
+  width: 1250px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.right-sidebar-column {
+  width: 430px;
+  margin-left: 0px;
+  margin-right: 40px;
+  flex: none;
+}
+
+.content-box {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background: white;
+  border: 1px solid #dbe2e8;
+  border-radius: 6px;
+  padding: 25px;
+  width: 100%;
+  margin-bottom: 20px;
 }
