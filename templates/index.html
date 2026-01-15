@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Your European Parliament</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/index_pages.css', v='2' )}}"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='images/logo.svg') }}"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <div
+        class="container-centered"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 100%;
+        "
+      >
+        <a href="{{ url_for('index') }}" id="logo-link">
+          <img
+            alt="YEP logo"
+            class="nav-logo"
+            src="{{ url_for('static', filename='images/logo.svg') }}"
+          />
+        </a>
+
+        <div class="nav-links">
+          <a
+            class="nav-link"
+            data-page="eu"
+            href="{{ url_for('whats_the_eu') }}"
+            >What's the EU?</a
+          >
+          <a
+            class="nav-link"
+            data-page="procedure"
+            href="{{ url_for('whats_a_procedure') }}"
+            >What is a procedure?</a
+          >
+
+          <a class="nav-link" href="{{ url_for('index_procedures') }}"
+            >Procedures</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="background-container">
+      <div class="container-centered">
+        <div class="main-header">
+          <div class="header-content">
+            <h2>What's going on in</h2>
+            <h1>
+              <span class="colored-letter">Y</span>our
+              <span class="colored-letter">E</span>uropean
+              <span class="colored-letter">P</span>arliament ?
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-credit">
+        © European Union 2019 - Source : EP, Mathieu CUGNOT
+      </div>
+    </div>
+
+    <div class="dots-background">
+      <div
+        class="container-centered"
+        style="display: flex; flex-direction: column; align-items: center"
+      >
+        <div class="intro-content">
+          Take a look at what the Members of European Parliament currently work
+          on:
+        </div>
+
+        <div class="cards-wrapper" id="cards-wrapper">
+          {% for pos in recent_positions %}
+          <a
+            class="card-link"
+            href="{{ url_for('show_procedure', reference=pos.reference) }}"
+          >
+            <div class="card">
+              <div class="card-content">
+                <div
+                  class="status-badge {% if pos.stage == 'COMPLETED' %}status-completed{% else %}status-ongoing{% endif %}"
+                >
+                  <p>{{ pos.stage }}</p>
+                </div>
+
+                <div class="date">{{ pos.formatted_date }}</div>
+                <p>{{ pos.title }}</p>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+
+        <a
+          class="box"
+          data-page="all_procedures"
+          href="{{ url_for('index_procedures') }}"
+          >View all procedures</a
+        >
+      </div>
+    </div>
+
+    <div class="colored-content">
+      <div class="container-centered">
+        <div class="main-explanation">
+          <div class="centered-section">
+            <h1>Understand the European Parliament</h1>
+            <p>
+              <strong>YEP</strong> provides significant and vulgarized
+              information for each
+              <strong>legislative procedure</strong> discussed in the European
+              Parliament. <br /><br />
+              By clicking on a procedure, you will find
+              <strong>summaries</strong> of its legislative texts,
+              <strong>MEP votes</strong>, as well as key events and dates.
+            </p>
+          </div>
+        </div>
+
+        <div class="boxes-container">
+          <a class="box" data-page="about" href="{{ url_for('about') }}"
+            >About</a
+          >
+          <a
+            class="box email-link"
+            data-page="contact"
+            href="mailto:bouzidnelia@gmail.com?subject=Contact%20from%20YEP"
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/index_pages.js') }}"></script>
+  </body>
+</html>

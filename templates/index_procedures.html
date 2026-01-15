@@ -1,0 +1,146 @@
+{% extends "base.html" %} {% block content %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/index_pages.css', v='2' )}}"
+/>
+
+<div class="content-area-whats-eu">
+  <div class="layout-intro container-centered-whats-eu">
+    <div class="header-container-whats-eu">
+      <h1>All procedures</h1>
+    </div>
+
+    <div class="explanation-center">
+      <div class="paragraphs-left">
+        <p>
+          Every single card on this page corresponds to a single legislative
+          procedure that’s been or still is in discussion in the European
+          Parliament. By clicking on a procedure, you will find access to the
+          summary of its main legislative texts (i.e. the proposal and the final
+          act) to help understand what laws are being acted in the EP. Other
+          information, such as the key events and dates or main people involved
+          in those procedures are also available.
+          <br /><br />
+          The summaries of the procedures are AI-made. You can read more on how
+          this project has been made in the
+          <a href="about.html" style="color: rgb(2, 77, 142)"
+            ><strong>About</strong></a
+          >. If you see any incorrect information, please
+          <a
+            href="mailto:bouzidnelia@gmail.com"
+            style="color: rgb(2, 77, 142); text-decoration: underline"
+            >contact me</a
+          >. <br /><br />
+
+          <button
+            class="filter-btn inline-filter"
+            data-popup="all-filters-popup"
+          >
+            Filter the Procedures
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-layout-procedure container-centered">
+  <div class="filter-overlay" id="filter-overlay"></div>
+
+  <div class="filter-popup" id="all-filters-popup">
+    <header class="popup-header">
+      <button class="close-btn" id="close-popup-btn">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="height: 16px; width: 16px; display: block"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <h2 class="popup-title">Filters</h2>
+      <div style="width: 16px"></div>
+    </header>
+
+    <div class="popup-content">
+      <section class="filter-section">
+        <h3 class="filter-section-title">Status</h3>
+        <div class="pill-group">
+          <label class="pill-btn">
+            <input type="checkbox" name="status" value="ongoing" />
+            <span>Ongoing</span>
+          </label>
+          <label class="pill-btn">
+            <input type="checkbox" name="status" value="completed" />
+            <span>Completed</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="filter-section">
+        <h3 class="filter-section-title">Year</h3>
+        <div id="year-options" class="pill-group"></div>
+      </section>
+
+      <section class="filter-section">
+        <h3 class="filter-section-title">Chronological order</h3>
+        <div class="pill-group">
+          <label class="pill-btn">
+            <input type="radio" name="order" value="desc" checked />
+            <span>Newest first</span>
+          </label>
+          <label class="pill-btn">
+            <input type="radio" name="order" value="asc" />
+            <span>Oldest first</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="filter-section">
+        <h3 class="filter-section-title">Subject</h3>
+        <div id="subject-options" class="pill-group"></div>
+      </section>
+    </div>
+
+    <footer class="popup-footer">
+      <button id="reset-filters-popup" class="reset-link">Reset</button>
+      <button id="apply-filters" class="apply-btn">Display results</button>
+    </footer>
+  </div>
+
+  <div class="cards-wrapper-procedures-page" id="procedures-container">
+    {% for row in rows %}
+    <a
+      href="{{ url_for('show_procedure', reference=row.reference) }}"
+      class="card-link procedure-card"
+      data-date-raw="{{ row.sort_date }}"
+      data-year="{{ row.year }}"
+      data-subjects="{{ row.subjects }}"
+      data-status="{% if row.stage == 'COMPLETED' %}completed{% else %}ongoing{% endif %}"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge {% if row.stage == 'COMPLETED' %}status-completed{% else %}status-ongoing{% endif %}"
+          >
+            <p>{{ row.stage }}</p>
+          </div>
+
+          <div class="date">{{ row.date }}</div>
+          <p>{{ row.title }}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/index_pages.js') }}"></script>
+
+{% endblock %}

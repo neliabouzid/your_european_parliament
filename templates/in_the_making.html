@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/index_pages.css', v='2' )}}"
+/>
+
+<div class="main-layout container-centered">
+  <main class="content-area">
+    <div class="header-container">
+      <h1 class="title">In the making...</h1>
+    </div>
+
+    <div class="explanation-left">
+      <div class="paragraphs-left">
+        <p>This page is in the making. Come back later to learn more!</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

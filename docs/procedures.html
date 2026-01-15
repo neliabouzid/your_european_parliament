@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Your European Parliament</title>
+
+    <link
+      rel="stylesheet"
+      href="static/css/index_pages.css"
+    />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="static/images/logo.svg"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <div
+        class="container-centered"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 100%;
+          font-family: 'SF Pro Rounded Bold', sans-serif !important;
+          padding: 0 20px;
+        "
+      >
+        <a href="index.html" id="logo-link">
+          <img
+            alt="YEP logo"
+            class="nav-logo"
+            src="static/images/logo.svg"
+          />
+        </a>
+
+        <div class="nav-links">
+          <a
+            class="nav-link"
+            data-page="eu"
+            href="whats-the-eu.html"
+            >What's the EU?</a
+          >
+          <a
+            class="nav-link"
+            data-page="procedure"
+            href="whats-a-procedure.html"
+            >What is a procedure?</a
+          >
+
+          <a class="nav-link" href="procedures.html"
+            >Procedures</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="floating-back-link">
+      Back to homepage
+    </a>
+
+    <main>
+
+<link
+  rel="stylesheet"
+  href="static/css/index_pages.css?v=2"
+/>
+
+<div class="content-area-whats-eu">
+  <div class="layout-intro container-centered-whats-eu">
+    <div class="header-container-whats-eu">
+      <h1>All procedures</h1>
+    </div>
+
+    <div class="explanation-center">
+      <div class="paragraphs-left">
+        <p>
+          Every single card on this page corresponds to a single legislative
+          procedure that’s been or still is in discussion in the European
+          Parliament. By clicking on a procedure, you will find access to the
+          summary of its main legislative texts (i.e. the proposal and the final
+          act) to help understand what laws are being acted in the EP. Other
+          information, such as the key events and dates or main people involved
+          in those procedures are also available.
+          <br /><br />
+          The summaries of the procedures are AI-made. You can read more on how
+          this project has been made in the About. If you see any incorrect
+          information, please contact me.
+          <br /><br />
+
+          <button
+            class="filter-btn inline-filter"
+            data-popup="all-filters-popup"
+          >
+            Filters the Procedures
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-layout-procedure container-centered">
+  <div class="filter-overlay" id="filter-overlay"></div>
+
+  <div class="filter-popup" id="all-filters-popup">
+    <header class="popup-header">
+      <button class="close-btn" id="close-popup-btn">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="height: 16px; width: 16px; display: block"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <h2 class="popup-title">Filters</h2>
+      <div style="width: 16px"></div>
+    </header>
+
+    <div class="popup-content">
+      <section class="filter-section">
+        <h3 class="filter-section-title">Status</h3>
+        <div class="pill-group">
+          <label class="pill-btn">
+            <input type="checkbox" name="status" value="ongoing" />
+            <span>Ongoing</span>
+          </label>
+          <label class="pill-btn">
+            <input type="checkbox" name="status" value="completed" />
+            <span>Completed</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="filter-section">
+        <h3 class="filter-section-title">Year</h3>
+        <div id="year-options" class="pill-group"></div>
+      </section>
+
+      <section class="filter-section">
+        <h3 class="filter-section-title">Chronological order</h3>
+        <div class="pill-group">
+          <label class="pill-btn">
+            <input type="radio" name="order" value="desc" checked />
+            <span>Newest first</span>
+          </label>
+          <label class="pill-btn">
+            <input type="radio" name="order" value="asc" />
+            <span>Oldest first</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="filter-section">
+        <h3 class="filter-section-title">Subject</h3>
+        <div id="subject-options" class="pill-group"></div>
+      </section>
+    </div>
+
+    <footer class="popup-footer">
+      <button id="reset-filters-popup" class="reset-link">Reset</button>
+      <button id="apply-filters" class="apply-btn">Display results</button>
+    </footer>
+  </div>
+
+  <div class="cards-wrapper-procedures-page" id="procedures-container">
+    
+    <a
+      href="procedure/2025/0255(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-20 00:00:00"
+      data-year="2025"
+      data-subjects="7"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">20 Oct. 2025</div>
+          <p>Justice programme 2028-2034</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0405(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-16 00:00:00"
+      data-year="2025"
+      data-subjects="3|4"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">16 Dec. 2025</div>
+          <p>Placing on the market of genetically modified micro-organisms and the processing of organs</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0540(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-23 00:00:00"
+      data-year="2025"
+      data-subjects="7"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">23 Oct. 2025</div>
+          <p>Union support for asylum, migration and integration 2028–2034</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0550(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-23 00:00:00"
+      data-year="2025"
+      data-subjects="1|4"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">23 Oct. 2025</div>
+          <p>&#39;AgoraEU&#39; programme 2028–2034</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0227(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-23 00:00:00"
+      data-year="2025"
+      data-subjects="6|8"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">23 Oct. 2025</div>
+          <p>Global Europe</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0423(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-16 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">16 Dec. 2025</div>
+          <p>Calculation of emission credits for heavy-duty vehicles for the reporting periods of the years 2025 to 2029</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0385(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-03 00:00:00"
+      data-year="2025"
+      data-subjects="3|6"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">03 Dec. 2025</div>
+          <p>Amendments to the Critical Raw Materials Act</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0103(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-19 00:00:00"
+      data-year="2025"
+      data-subjects="3|4|8"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">19 Dec. 2025</div>
+          <p>Incentivising defence-related investments in the EU budget to implement the ReArm Europe Plan</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0258(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-06 00:00:00"
+      data-year="2025"
+      data-subjects="5|7"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">06 Oct. 2025</div>
+          <p>Pericles V exchange, assistance and training programme for the protection of the euro against counterfeiting 2028–2034</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0590(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-23 00:00:00"
+      data-year="2025"
+      data-subjects="2|3|7"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">23 Oct. 2025</div>
+          <p>Establishing the Single Market and Customs Programme for the period 2028-2034</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0237(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-06 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">06 Oct. 2025</div>
+          <p>Amendments to the Common Market Organisation (CMO) Regulation concerning the EU school scheme, sectoral interventions, protein sector, hemp requirements, marketing standards, import duties, crisis supply rules and securities</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0312(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-23 00:00:00"
+      data-year="2025"
+      data-subjects="4"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">23 Oct. 2025</div>
+          <p>Economic and budgetary surveillance of Member States in the euro area experiencing or threatened with serious difficulties with respect to their financial stability</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0241(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-23 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">23 Oct. 2025</div>
+          <p>Common Agricultural Policy 2028–2034</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0424(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-16 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">16 Dec. 2025</div>
+          <p>Exemption of certain N2 electric vehicles from the requirement to install and use a speed limitation device</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0071(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-11-24 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">24 Nov. 2025</div>
+          <p>Amending certain agricultural products Regulations as regards certain market rules and sectoral support measures in the wine sector and for aromatised wine products</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0381(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-04 00:00:00"
+      data-year="2025"
+      data-subjects="2"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">04 Dec. 2025</div>
+          <p>Banks and financial markets: settlement finality in payment and securities settlement systems</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0383(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-04 00:00:00"
+      data-year="2025"
+      data-subjects="2|5"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">04 Dec. 2025</div>
+          <p>Further development of capital market integration and supervision within the Union</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0396(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-10 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">10 Dec. 2025</div>
+          <p>Suspending the application of the rules on the appointment of authorised representatives for extended producer responsibility for waste, waste electrical and electronical equipment and single use plastic waste</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0073(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-17 00:00:00"
+      data-year="2025"
+      data-subjects="4"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">17 Dec. 2025</div>
+          <p>European Globalisation Adjustment Fund for Displaced Workers (EGF): support to workers affected by imminent job displacement in enterprises undergoing restructuring</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0384(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-03 00:00:00"
+      data-year="2025"
+      data-subjects="4|6|7"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">03 Dec. 2025</div>
+          <p>Monitoring and controlling drug precursors</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0240(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-23 00:00:00"
+      data-year="2025"
+      data-subjects="3|4"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">23 Oct. 2025</div>
+          <p>European Fund for economic, social and territorial cohesion, agriculture and rural, fisheries and maritime, prosperity and security 2028–2034</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0361(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-11-20 00:00:00"
+      data-year="2025"
+      data-subjects="2|4"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">20 Nov. 2025</div>
+          <p>Sustainability-related disclosures in the financial services sector (SFDR) and key information documents for packaged retail and insurance-based investment products (PRIIPs)</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0395(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-10 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">10 Dec. 2025</div>
+          <p>Suspending the application of the rules on the appointment of an authorised representative for extended producer responsibility for batteries and waste batteries and packaging and packaging waste</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0399(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-10 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="ongoing"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-ongoing"
+          >
+            <p>ONGOING</p>
+          </div>
+
+          <div class="date">10 Dec. 2025</div>
+          <p>Trans-European energy infrastructure: guidelines</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0023(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-17 00:00:00"
+      data-year="2025"
+      data-subjects="3|7"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">17 Oct. 2025</div>
+          <p>Insolvency proceedings: replacing Annexes A and B</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0012(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-04-22 00:00:00"
+      data-year="2025"
+      data-subjects="6"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">22 Apr. 2025</div>
+          <p>Additional customs duties on imports of certain products originating in the USA</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0077(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-06-25 00:00:00"
+      data-year="2025"
+      data-subjects="2"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">25 Jun. 2025</div>
+          <p>Capital Requirements Regulation (CRR): requirements for securities financing transactions under the net stable funding ratio</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0021(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-06-20 00:00:00"
+      data-year="2025"
+      data-subjects="6"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">20 Jun. 2025</div>
+          <p>Modification of customs duties applicable to imports of certain goods originating in or exported directly or indirectly from Russia and Belarus</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0084(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-09-19 00:00:00"
+      data-year="2025"
+      data-subjects="4"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">19 Sep. 2025</div>
+          <p>Amending ERDF, Cohesion Fund and Just Transition Fund as regards specific measures to address strategic challenges in the context of the mid-term review</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0085(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-09-19 00:00:00"
+      data-year="2025"
+      data-subjects="4"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">19 Sep. 2025</div>
+          <p>European Social Fund (ESF+): specific measures to address strategic challenges</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0058(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-06-24 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">24 Jun. 2025</div>
+          <p>Habitats Directive: protection status of the wolf (Canis lupus)</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0039(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-17 00:00:00"
+      data-year="2025"
+      data-subjects="2|3|6"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">17 Oct. 2025</div>
+          <p>Carbon Border Adjustment Mechanism: simplification and strengthening</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0051(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-09-10 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">10 Sep. 2025</div>
+          <p>Role of gas storage for securing gas supplies ahead of the winter season</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0188(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-04 00:00:00"
+      data-year="2025"
+      data-subjects="2|3"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">04 Dec. 2025</div>
+          <p>Extension of the derogation for heavy-duty vehicles with zero emissions</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0129(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-07-30 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">30 Jul. 2025</div>
+          <p>Amending Regulation as regards obligations of economic operators concerning battery due diligence policies</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0104(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-06-27 00:00:00"
+      data-year="2025"
+      data-subjects="3|4"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">27 Jun. 2025</div>
+          <p>Additional assistance and further flexibility to outermost regions affected by severe natural disasters: cyclone Chido devastating Mayotte</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0526(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-12-04 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">04 Dec. 2025</div>
+          <p>Dates of application and transitional provisions for chemical products</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0044(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-04-16 00:00:00"
+      data-year="2025"
+      data-subjects="3"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">16 Apr. 2025</div>
+          <p>Certain corporate sustainability reporting and due diligence requirements: application dates</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0070(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-06-19 00:00:00"
+      data-year="2025"
+      data-subjects="2|3"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">19 Jun. 2025</div>
+          <p>Additional flexibility as regards the calculation of manufacturers’ compliance with CO2 emission performance standards for new passenger cars and new light commercial vehicles for the calendar years 2025 to 2027</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0022(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-14 00:00:00"
+      data-year="2025"
+      data-subjects="2"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">14 Oct. 2025</div>
+          <p>Securities settlement in the EU and central securities depositories (CSDs): shorter settlement cycle in the Union</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0074(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-10-15 00:00:00"
+      data-year="2025"
+      data-subjects="7|8"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">15 Oct. 2025</div>
+          <p>Extension of the timeframe for the establishment of the Eurojust case management system</p>
+        </div>
+      </div>
+    </a>
+    
+    <a
+      href="procedure/2025/0056(COD).html"
+      class="card-link procedure-card"
+      data-date-raw="2025-06-05 00:00:00"
+      data-year="2025"
+      data-subjects="6"
+      data-status="completed"
+    >
+      <div class="card-procedures-page">
+        <div class="card-content">
+          <div
+            class="status-badge status-completed"
+          >
+            <p>COMPLETED</p>
+          </div>
+
+          <div class="date">05 Jun. 2025</div>
+          <p>Common rules for imports: suspension of certain parts of Regulation (EU) 2015/478 as regards imports of Ukrainian products into the European Union</p>
+        </div>
+      </div>
+    </a>
+    
+  </div>
+</div>
+
+<script src="static/js/index_pages.js"></script>
+
+</main>
+  </body>
+</html>
