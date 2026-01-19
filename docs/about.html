@@ -86,34 +86,63 @@
           project website”, which consist in creating an autonomous and
           ambitious project from scratch presented on a fully understandable
           website. The project began in September 2025, has been fully developed
-          without spending any money, and there is still continuously in
+          without spending any money, and is still continuously in
           development: the website you are looking at is the result of a 4-month
-          project, but it has the ambition to be continuously improved, as each
-          development step takes time, due to the big amount of data that has to
+          project, but it has the ambition to be improved, as each
+          development step takes time due to the big amount of data that has to
           be processed.
           <br />
           <br />
-          Being interested in politics, I often struggle with understanding clearly how European institutions work, what their roles are, and what the people I vote for work on. Open data on the European Parliament’s works is already available online on the Legislative Observatory; however it is presented in a database style, making it quite hard for a person that’s not an expert in EU legislation to understand. This website has therefore been designed to help vulgarize such information. My primary goals with it are to use AI-automation to summarize complex and numerous legislative texts from the European Parliament in a short amount of time, and to make the information gathered look more readable, or more appealing to the users. This project was strongly inspired by the Datan project, aimed at vulgarizing decisions taken in the French assembly.
+          Being interested in politics, I often struggle with understanding clearly 
+          how European institutions work, what their roles are, and what the people 
+          I vote for work on. Open data on the European Parliament’s works is already 
+          available online on the 
+          <a href="https://oeil.europarl.europa.eu/oeil/en/search" target="_blank" rel="noopener noreferrer" style="color: rgb(2, 77, 142); text-decoration: underline;"> 
+            Legislative Observatory</a>; 
+          however it is presented in a database style, making it quite hard for a person 
+          that’s not an expert in EU legislation to understand. This website has therefore
+           been designed to help vulgarize such information. My primary goals with it are 
+           to use AI-automation to summarize numerous complex legislative texts from the 
+           European Parliament in a short amount of time, and to make the information 
+           gathered look more readable, or more appealing to the users. This project was 
+           strongly inspired by the 
+          <a href="https://datan.fr/" target="_blank" rel="noopener noreferrer" style="color: rgb(2, 77, 142); text-decoration: underline;"> 
+          Datan</a> project, aimed at vulgarizing decisions taken in the French assembly.
         <br>
         <br>
         <h2><strong>How was this project made possible? How does it work?</strong></h2>
-<br>
-<br>
-To complete this project, I first had to scrape (i.e. create a code to automatically extract information from an online website in order to build a database) the information gathered on the European Parliament’s open data website, the Legislative Observatory. I focused my scraping on the legislative procedures of the year 2025, since my priority was to vulgarize recent works from the EP. The main extracted information for each legislative procedure is the following one: key institutions/players involved in the procedure, main dates, all legislative texts produced for the procedure (proposals, final acts, etc.), and main subjects.
-<br> <br>
-After gathering that information in a database, I used the large language model (abbreviated in LLM, i.e. a text generative AI) phi-4 to summarize the legislative texts contained in each legislative procedure for the general public. This step is still in constant development, as legislative texts can be hundreds of pages long, which take a lot of time to summarize for a LLM like phi-4. 
-<br>
-<br>
-All of the code for this project is available on the
-  <a href="https://github.com/neliabouzid/your_european_parliament" target="_blank" rel="noopener noreferrer" style="color: rgb(2, 77, 142); text-decoration: underline;"> 
-    GitHub repository
-  </a>.
-<br>
-Currently, procedures from April to December 2025 have been summarized and are available on this website. More procedures are to come. If you see any misinformation, please           <a
-            href="mailto:bouzidnelia@gmail.com"
-            style="color: rgb(2, 77, 142); text-decoration: underline"
-            >contact me</a
-          >.
+        <br>
+        <br>
+        To complete this project, I first had to scrape (i.e. create a code to automatically 
+        extract information from an online website in order to build a database) the information 
+        gathered on the European Parliament’s open data website, the 
+        <a href="https://oeil.europarl.europa.eu/oeil/en/search" target="_blank" rel="noopener noreferrer" style="color: rgb(2, 77, 142); text-decoration: underline;"> 
+            Legislative Observatory</a>. I focused my scraping on the legislative procedures
+        of the year 2025, since my priority was to vulgarize recent works from the EP. 
+        The main extracted information for each legislative procedure is the 
+        following one: key institutions/players involved in the procedure, main dates, 
+        all legislative texts produced for the procedure (proposals, final acts, etc.), and main subjects.
+        <br> <br>
+        After gathering that information in a database, I used the large language model 
+        (abbreviated in LLM, i.e. a text generative AI)   
+        <a href="https://huggingface.co/microsoft/phi-4" target="_blank" rel="noopener noreferrer" style="color: rgb(2, 77, 142); text-decoration: underline;"> 
+            phi-4</a> to summarize the legislative texts contained in each legislative 
+        procedure for the general public. This step is still in constant development, 
+        as legislative texts can be hundreds of pages long, which take a lot of time 
+        to summarize for a LLM like phi-4. 
+      <br>
+      <br>
+      All of the code for this project is available on the
+        <a href="https://github.com/neliabouzid/your_european_parliament" target="_blank" rel="noopener noreferrer" style="color: rgb(2, 77, 142); text-decoration: underline;"> 
+          GitHub repository</a>.
+      <br>
+      Currently, procedures from April to December 2025 have been summarized 
+      and are available on this website. More procedures are to come. If you 
+      see any misinformation, please           
+      <a
+        href="mailto:bouzidnelia@gmail.com"
+        style="color: rgb(2, 77, 142); text-decoration: underline"
+        >contact me</a>.
         </p>
       </div>
     </div>
