@@ -44,14 +44,11 @@
 
 /* Base */
 body {
-  /* Force la hauteur MINIMALE à 100% de la fenêtre visible */
   min-height: 100vh;
 
-  /* Active le mode "colonne flexible" */
   display: flex;
   flex-direction: column;
 
-  /* Tes styles existants (ne les supprime pas) */
   margin: 0;
   width: 100%;
   overflow-x: hidden;
@@ -65,20 +62,17 @@ a {
   text-decoration: none;
 }
 
-/* Configuration du lien textuel flottant */
 .floating-back-link {
   position: absolute;
-  top: 80px; /* Ajusté pour être juste sous une navbar standard */
-  left: 50px; /* Décalé plus vers la droite comme demandé */
-  z-index: 10;
+  top: 80px;
+  left: 50px;
+  z-index: 1000;
 
-  /* Style du texte */
   font-family: "SF Pro Rounded Bold", sans-serif;
   font-size: 0.9rem;
   text-decoration: none;
   color: #555;
 
-  /* Aspect "bouton discret" */
   background-color: rgba(255, 255, 255, 0.9);
   padding: 8px 15px;
   border-radius: 20px;
@@ -97,7 +91,6 @@ a {
   transform: translateY(-1px);
 }
 
-/* On ajoute une petite flèche discrète avant le texte pour le contexte visuel */
 .floating-back-link::before {
   content: "←";
   margin-right: 8px;
