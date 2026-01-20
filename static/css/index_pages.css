@@ -63,7 +63,7 @@ a {
 }
 
 .floating-back-link {
-  position: absolute;
+  position: fixed;
   top: 80px;
   left: 50px;
   z-index: 10;
